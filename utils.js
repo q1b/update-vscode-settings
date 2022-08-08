@@ -1,5 +1,5 @@
 import chroma from "chroma-js"
-import colors from "./assets/colors.json" assert { type: 'json' };
+import colors from "./assets/colors.json" assert { type: "json" }
 
 /**
  *
@@ -32,28 +32,35 @@ function roundTo(x, decimals) {
 
 const apply = {
 	/**
-	 * 
-	 * @param {{color:string;alpha?:number;degree:number;}} param0 
+	 *
+	 * @param {{color:string;alpha?:number;degree:number;}} param0
 	 * @returns {string}
 	 */
-	glow: ({ color, alpha, degree }) => alpha ? chroma(color).alpha(alpha).brighten(degree).hex() : chroma(color).brighten(degree).hex(),
+	glow: ({ color, alpha, degree }) =>
+		alpha
+			? chroma(color).alpha(alpha).brighten(degree).hex()
+			: chroma(color).brighten(degree).hex(),
 	/**
-	 * 
-	 * @param {{color:string;alpha?:number;degree:number;}} param0 
+	 *
+	 * @param {{color:string;alpha?:number;degree:number;}} param0
 	 * @returns {string}
 	 */
-	dim: ({ color, alpha, degree }) => alpha ? chroma(color).alpha(alpha).darken(degree).hex() : chroma(color).darken(degree).hex(),
+	dim: ({ color, alpha, degree }) =>
+		alpha
+			? chroma(color).alpha(alpha).darken(degree).hex()
+			: chroma(color).darken(degree).hex(),
 }
 
 /**
- * 
- * @param {string} str 
+ *
+ * @param {string} str
  * @returns {string}
  */
 function parser(str) {
 	let hex = extractHex(str)
 	if (hex !== null) return hex[0]
-	const extract_reg = /(?<degree>[\d\.\/]+(?=-))?-?(?<effect>\w+(?=->))?(->)?colors\.(?<color>\w+)\.?(?<shade>\d+)?\/?(?<alpha>\d+)?(&?colors\.(?<second_color>\w+)\.?(?<second_shade>\d+)?\/?(?<second_alpha>\d+)?)?/
+	const extract_reg =
+		/(?<degree>[\d\.\/]+(?=-))?-?(?<effect>\w+(?=->))?(->)?\$(?<color>\w+)\.?(?<shade>\d+)?\/?(?<alpha>\d+)?(&?\$(?<second_color>\w+)\.?(?<second_shade>\d+)?\/?(?<second_alpha>\d+)?)?/
 	const extractedData = str.match(extract_reg)?.groups
 	let {
 		effect = undefined,
@@ -63,12 +70,11 @@ function parser(str) {
 		alpha = undefined,
 		second_color = undefined,
 		second_shade = undefined,
-		second_alpha = undefined
-	} = extractedData;
-
+		second_alpha = undefined,
+	} = extractedData
 	const hex_color = shade ? colors[color][shade] : colors[color]
-	if (degree?.includes('/')) {
-		const [a, b] = degree.split('/')
+	if (degree?.includes("/")) {
+		const [a, b] = degree.split("/")
 		degree = parseInt(a) / parseInt(b)
 	} else degree = parseInt(degree)
 
@@ -80,16 +86,20 @@ function parser(str) {
 			console.error("Define Second Color to apply mix effect")
 			return "#ff0000"
 		}
-		degree = degree === 1 ? degree = 1/2 : degree
-		const hex_color_2 = second_shade ? colors[second_color][second_shade] : colors[second_color]
-		const h = (c, a) => a ? chroma(c).alpha(a).hex() : chroma(c).hex()
+		degree = degree === 1 ? (degree = 1 / 2) : degree
+		const hex_color_2 = second_shade
+			? colors[second_color][second_shade]
+			: colors[second_color]
+		const h = (c, a) => (a ? chroma(c).alpha(a).hex() : chroma(c).hex())
 		const hex1 = h(hex_color, alpha)
 		const hex2 = h(hex_color_2, second_alpha)
 		return chroma.mix(hex1, hex2, degree).hex()
 	} else if (effect !== undefined && degree !== undefined) {
 		return apply[effect]({ color: hex_color, degree: degree, alpha })
 	}
-	return alpha === undefined ? hex_color : chroma(hex_color).alpha(alpha).hex()
+	return alpha === undefined
+		? hex_color
+		: chroma(hex_color).alpha(alpha).hex()
 }
 
 let HEX = /^#([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})?$/i
