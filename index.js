@@ -1,7 +1,7 @@
 import { dirname } from "node:path"
 import fs from "node:fs/promises"
 import constants from "./constants.js"
-import { removeComments, replaceColorWithHex } from "./utils.js"
+import { kitchen, removeComments } from "./utils.js"
 
 async function ensureWrite(file, text) {
 	await fs.mkdir(dirname(file), { recursive: true })
@@ -148,7 +148,7 @@ async function main() {
 	 * @type {{ "colors":any }}
 	 */
 	const inputSettings = JSON.parse(inputDetails)
-	replaceColorWithHex(inputSettings)
+	kitchen(inputSettings)
 	await updateFile({
 		startpoint: constants.startpoint,
 		endpoint: constants.endpoint,

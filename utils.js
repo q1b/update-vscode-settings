@@ -1,5 +1,5 @@
 import chroma from "chroma-js"
-import colors from "./assets/colors.json" assert { type: "json" }
+import colors from "./assets/colors.js"
 
 /**
  *
@@ -60,7 +60,7 @@ function parser(str) {
 	let hex = extractHex(str)
 	if (hex !== null) return hex[0]
 	const extract_reg =
-		/(?<degree>[\d\.\/]+(?=-))?-?(?<effect>\w+(?=->))?(->)?\$(?<color>\w+)\.?(?<shade>\d+)?\/?(?<alpha>\d+)?(&?\$(?<second_color>\w+)\.?(?<second_shade>\d+)?\/?(?<second_alpha>\d+)?)?/
+		/(?<degree>[\d\.\/]+(?=-))?-?(?<effect>\w+(?=->))?(->)?\$(?<color>\w+)\.?(?<shade>[\w\d]+)?\/?(?<alpha>\d+)?(&?\$(?<second_color>\w+)\.?(?<second_shade>\d+)?\/?(?<second_alpha>\d+)?)?/
 	const extractedData = str.match(extract_reg)?.groups
 	let {
 		effect = undefined,
@@ -72,7 +72,16 @@ function parser(str) {
 		second_shade = undefined,
 		second_alpha = undefined,
 	} = extractedData
-	const hex_color = shade ? colors[color][shade] : colors[color]
+	let hex_color
+	if (shade) {
+		hex_color = colors[color][shade]
+	} else {
+		if (typeof colors[color] === "string") {
+			hex_color = colors[color]
+		} else {
+			hex_color = colors[color]["default"]
+		}
+	}
 	if (degree?.includes("/")) {
 		const [a, b] = degree.split("/")
 		degree = parseInt(a) / parseInt(b)
@@ -116,10 +125,28 @@ const extractHex = (str) =>
 		)
 		.match(HEX)
 
-export function replaceColorWithHex(obj) {
-	const keys = Object.keys(obj)
-	for (let i = 0; i < keys.length; i++) {
-		const key = keys[i]
+export function kitchen(obj) {
+	const var_names = Object.keys(obj["vars"])
+	for (let i = 0; i < var_names.length; i++) {
+		const var_name = var_names[i]
+		const var_values = obj["vars"][var_name]
+		const var_varients = Object.keys(var_values)
+		for (let j = 0; j < var_varients.length; j++) {
+			const var_varient = var_varients[j]
+			const var_varient_value = parser(obj["vars"][var_name][var_varient])
+			if (!colors[var_name])
+				colors[var_name] = { [var_varient]: var_varient_value }
+			else
+				colors[var_name] = {
+					[var_varient]: var_varient_value,
+					...colors[var_name],
+				}
+		}
+	}
+	// console.log(vars_name)
+	const keysToReplace = obj["scope"]
+	for (let i = 0; i < keysToReplace.length; i++) {
+		const key = keysToReplace[i]
 		const tokens = Object.keys(obj[key])
 		if (typeof obj[key] !== "string") {
 			for (let j = 0; j < tokens.length; j++) {
@@ -130,6 +157,7 @@ export function replaceColorWithHex(obj) {
 		}
 	}
 }
+
 /**
  *
  * @param {string} str

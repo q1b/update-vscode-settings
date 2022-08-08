@@ -2,6 +2,17 @@
 	// https://play.tailwindcss.com/KRdy96E2yN theme
 	// https://play.tailwindcss.com/TRKarp06l4 dark theme
 	"$schema": "vscode://schemas/color-theme",
+	"vars":{
+		"link":{
+			"default":"$blue.500",
+			"active":"$cyan.400"
+		},
+		"focus":{
+			"default":"$cyan.500",
+			"active":"$yellow.200"
+		}
+	},
+	"scope":["colors"],
 	"colors" : {
 		// //  An extra border around active elements to separate them from others for greater contrast.
 		// "contrastActiveBorder":"$transparent",
@@ -40,22 +51,22 @@
 		"editorCursor.foreground": "$slate.200",
 
 		// EDITOR SELECTIONS
-		"editor.inactiveSelectionBackground": "$slate.400/60",
-
+		"editor.inactiveSelectionBackground": "$slate.400/20",
+		
 		// for hc
 		"editor.selectionForeground": "$slate.300",
-		"editor.selectionBackground": "$blue.500/40",
-		"editor.selectionHighlightBackground": "$blue.500/15",
+		"editor.selectionBackground": "$slate.500/40",
+		"editor.selectionHighlightBackground": "$slate.500/15",
 		"editor.selectionHighlightBorder": "$indigo.500/40",
 		
 		"editor.wordHighlightBackground": "$violet.400/20",
 		"editor.wordHighlightStrongBackground": "$indigo.400/38",
 		"editor.wordHighlightBorder": "$violet.500/20",
 		"editor.wordHighlightStrongBorder": "$indigo.500/56",
-		
+	
 		// EDITOR SEARCH
-		"editor.findMatchBackground": "glow->$indigo.700",
-		"editor.findMatchBorder": "$indigo.500",
+		"editor.findMatchBackground": "$indigo.700/50",
+		"editor.findMatchBorder": "$indigo.500/50",
 		"editor.findMatchHighlightBackground": "$highlight.500/15",
 		"editor.findMatchHighlightBorder": "$blue.500",
 		
@@ -105,8 +116,8 @@
 		"textBlockQuote.background": "$slate.600",
 		"textBlockQuote.border": "$transparent",
 		"textCodeBlock.background": "$slate.700",
-		"textLink.foreground": "$cyan.200",
-		"textLink.activeForeground": "$cyan.500",
+		"textLink.foreground": "$link",
+		"textLink.activeForeground": "$link.active",
 		"textPreformat.foreground": "$teal.400",
 		"textSeparator.foreground": "$teal.400",
 		"badge.background": "$stone.200",
@@ -145,6 +156,7 @@
 		"dropdown.listBackground": "$gray.800",
 		"dropdown.border": "$transparent",
 		"dropdown.foreground": "$slate.500",
+
 		// Lists and trees $for list and trees like the File Explorer.
 		//  List/Tree background color for the selected item when the list/tree is active
 		"list.activeSelectionBackground": "$slate.500",
@@ -184,7 +196,7 @@
 		//  List/Tree foreground color for invalid items, for example an unresolved root in explorer.
 		"list.invalidItemForeground": "$rose.300",
 		//  Foreground color of list items containing errors.
-		"list.errorForeground": "$rose.3200",
+		"list.errorForeground": "$rose.300",
 		//  Foreground color of list items containing warnings.
 		"list.warningForeground": "$amber.300",
 		//  List/Tree Filter background color of typed text when searching inside the list/tree.
@@ -373,6 +385,9 @@
 		"inputValidation.warningForeground": "$amber.500",
 		//  Input validation border color for warning severity.
 		"inputValidation.warningBorder": "$amber.50",
+		"debugIcon.restartForeground": "$rose.600",
+		"debugToolBar.background": "dim->$slate.600",
+		"debugToolBar.border": "$slate.600/10",
 		// The Side Bar contains views like the Explorer and Search.
 		//  Side Bar background color.,
 		"sideBar.background": "$slate.700",
@@ -397,7 +412,7 @@
 		//  Background color of editor widgets, such as Find/Replace.
 		"editorWidget.background": "$slate.800",
 		//  Border color of the editor widget unless the widget does not contain a border or defines its own border color.
-		"editorWidget.border": "$transparent",
+		"editorWidget.border": "$slate.300",
 		//  Border color of the resize bar of editor widgets. The color is only used if the widget chooses to have a resize border and if the color is not overridden by a widget.
 		"editorWidget.resizeBorder": "$violet.600",
 		//  Background color of the suggestion widget.
@@ -463,7 +478,6 @@
 		"editorGroupHeader.border": "$slate.600",
 		"editorGroup.emptyBackground": "$slate.800",
 		"editorGroup.focusedEmptyBorder": "$slate.200",
-
 		//  Active Tab background color in an active group.
 		"tab.activeBackground": "$slate.800",
 		//  Active Tab background color in an inactive editor group.
@@ -558,7 +572,7 @@
 		//  Match highlight border color in the peek view editor.
 		"peekViewEditor.matchHighlightBorder": "$blue.700",
 		//  Background color of the peek view result list.
-		"peekViewResult.background": "$slate.900",
+		"peekViewResult.background": "$slate.800",
 		//  Foreground color for file nodes in the peek view result list.
 		"peekViewResult.fileForeground": "$slate.400",
 		//  Foreground color for line nodes in the peek view result list.
@@ -583,17 +597,18 @@
 		//  Drag and drop feedback color for the panel titles. Panels are shown below the editor area and contain views like output and integrated terminal.
 		"panel.dropBorder": "$slate.400",
 		//  Border color for the active panel title.
-		"panelTitle.activeBorder": "$indigo.400",
+		"panelTitle.activeBorder": "$indigo.500",
 		//  Title color for the active panel.
-		"panelTitle.activeForeground": "$slate.400",
+		"panelTitle.activeForeground": "$slate.200",
 		//  Title color for the inactive panel.
-		"panelTitle.inactiveForeground": "$slate.500",
+		"panelTitle.inactiveForeground": "$slate.400",
+
 		//  Input box border for inputs in the panel.
 		"panelInput.border": "$transparent",
 		//  Panel section border color used when multiple views are stacked horizontally in the panel. Panels are shown below the editor area and contain views like output and integrated terminal.
 		"panelSection.border": "$slate.300",
 		//  Drag and drop feedback color for the panel sections. The color should have transparency so that the panel sections can still shine through. Panels are shown below the editor area and contain views like output and integrated terminal.
-		"panelSection.dropBackground": "$slate.400",
+		"panelSection.dropBackground": "$slate.400/20",
 		//  Panel section header background color. Panels are shown below the editor area and contain views like output and integrated terminal.
 		"panelSectionHeader.background": "$black",
 		//  Panel section header foreground color. Panels are shown below the editor area and contain views like output and integrated terminal.
@@ -699,29 +714,29 @@
 		"keybindingLabel.border": "$cyan.400",
 		//  Keybinding label border bottom color. The keybinding label is used to represent a keyboard shortcut
 		"keybindingLabel.bottomBorder": "$slate.400",
-		//  Status Bar item background color when clicking.
-		"statusBarItem.activeBackground": "$teal.200",
-		//  Status Bar item background color when hovering.
-		"statusBarItem.hoverBackground": "$teal.400",
 		//  Standard Status Bar background color.
-		"statusBar.background": "$emerald.300",
+		"statusBar.background": "$slate.500",
+		//  Status Bar item background color when hovering.
+		"statusBarItem.hoverBackground": "$slate.200/20",
+		//  Status Bar item background color when clicking.
+		"statusBarItem.activeBackground": "$slate.600",
 		//  Status Bar foreground color.
-		"statusBar.foreground": "$teal.800",
+		"statusBar.foreground": "$slate.200",
 		//  Status Bar border color separating the Status Bar and editor.
 		"statusBar.border": "$slate.400",
 		"statusBar.focusBorder": "$slate.200",
 		//  Status Bar background color when a program is being debugged.
-		"statusBar.debuggingBackground": "$emerald.300",
+		"statusBar.debuggingBackground": "9/11-mix->$slate.700$slate.600",
 		//  Status Bar foreground color when a program is being debugged.
-		"statusBar.debuggingForeground": "$teal.800",
+		"statusBar.debuggingForeground": "$slate.200",
 		//  Status Bar border color separating the Status Bar and editor when a program is being debugged.
-		"statusBar.debuggingBorder": "$slate.400",
+		"statusBar.debuggingBorder": "9/11-mix->$slate.700$slate.600",
 		//  Status Bar foreground color when no folder is opened.
-		"statusBar.noFolderForeground": "$teal.800",
+		"statusBar.noFolderForeground": "$slate.400",
 		//  Status Bar background color when no folder is opened.
-		"statusBar.noFolderBackground": "$emerald.300",
+		"statusBar.noFolderBackground": "$slate.700",
 		//  Status Bar border color separating the Status Bar and editor when no folder is opened.
-		"statusBar.noFolderBorder": "$slate.400",
+		"statusBar.noFolderBorder": "$slate.700",
 		//  Status Bar prominent items foreground color.
 		"statusBarItem.prominentForeground": "$teal.100",
 		//  Status Bar prominent items background color.
