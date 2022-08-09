@@ -57,8 +57,8 @@ const apply = {
  * @returns {string}
  */
 function parser(str) {
-	let hex = extractHex(str)
-	if (hex !== null) return hex[0]
+	if (str.at(0) === "#") return str
+	if (str.at(0) === "h") return chroma(str).hex()
 	const extract_reg =
 		/(?<degree>[\d\.\/]+(?=-))?-?(?<effect>\w+(?=->))?(->)?\$(?<color>\w+)\.?(?<shade>[\w\d]+)?\/?(?<alpha>\d+)?(&?\$(?<second_color>\w+)\.?(?<second_shade>\d+)?\/?(?<second_alpha>\d+)?)?/
 	const extractedData = str.match(extract_reg)?.groups
@@ -107,7 +107,7 @@ function parser(str) {
 		return apply[effect]({ color: hex_color, degree: degree, alpha })
 	}
 	return alpha === undefined
-		? hex_color
+		? chroma(hex_color).hex()
 		: chroma(hex_color).alpha(alpha).hex()
 }
 
@@ -156,18 +156,4 @@ export function kitchen(obj) {
 			}
 		}
 	}
-}
-
-/**
- *
- * @param {string} str
- *
- */
-export function removeComments(str) {
-	return str
-		.split("\n")
-		.filter((line) => {
-			if (!!!line.includes("//")) return line
-		})
-		.join("\n")
 }

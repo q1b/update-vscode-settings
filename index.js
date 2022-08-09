@@ -1,7 +1,8 @@
+import parser from "./parser.js"
 import { dirname } from "node:path"
 import fs from "node:fs/promises"
 import constants from "./constants.js"
-import { kitchen, removeComments } from "./utils.js"
+import { kitchen } from "./utils.js"
 
 async function ensureWrite(file, text) {
 	await fs.mkdir(dirname(file), { recursive: true })
@@ -37,7 +38,7 @@ async function ensureWrite(file, text) {
  *  * Editor don't be here but will be here
  *
  * COMPONENTS ->
- *  Button control
+ *  Button control ✅
  *  Breadcrumbs colors
  *  Dropdown control
  *  Menu
@@ -142,8 +143,8 @@ async function updateFile({ keys, values, startpoint, endpoint, filepath }) {
 }
 
 async function main() {
-	let inputDetails = await fs.readFile(`./inputSettings.json`, "utf8")
-	inputDetails = removeComments(inputDetails)
+	// parser will remove the comments and manipulate stuff So, add some magic
+	let inputDetails = parser(await fs.readFile(`./inputSettings.json`, "utf8"))
 	/**
 	 * @type {{ "colors":any }}
 	 */

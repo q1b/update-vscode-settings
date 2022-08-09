@@ -10,7 +10,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "chroma-js": "^2.4.2"
+    "chroma-js": "^2.4.2",
+    "strip-json-comments": "^5.0.0"
   },
   "devDependencies": {
     "@types/chroma-js": "^2.1.4"
