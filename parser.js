@@ -43,7 +43,6 @@ export default function stripJsonComments(
 		const nextCharacter = jsonString[index + 1]
 
 		if (isInsideSqrtBrackets) sqrtResult += currentCharacter
-		console.log(sqrtResult, currentCharacter)
 		if (
 			!isInsideSqrtBrackets &&
 			currentCharacter + nextCharacter === '"$' &&

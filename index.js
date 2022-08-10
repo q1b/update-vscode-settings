@@ -38,9 +38,9 @@ async function ensureWrite(file, text) {
  *  * Editor don't be here but will be here
  *
  * COMPONENTS ->
- *  Button control ✅
- *  Breadcrumbs colors
- *  Dropdown control
+ *  Buttons ✅
+ *  Breadcrumbs ✅
+ *  Dropdown ✅
  *  Menu
  *  Menubar
  *  Banner colors

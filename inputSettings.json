@@ -3,39 +3,88 @@
 	// https://play.tailwindcss.com/TRKarp06l4 dark theme
 	"$schema": "vscode://schemas/color-theme",
 	"vars":{
-		"$base":{
-			"default":"#fff"
+		"sep":{
+			"default":"$base.400"
+		},
+		"btn":{
+			"bg":"$base.600",
+			"fg":"$base.150",
+			"line":"$base.400/40"
+		},
+		"list":{
+			"bg":"$base.750",
+			"fg":"$base.150",
+			"line":"$base.400/40"
+		},
+		"item":{
+			"bg":"$sky.750",
+		    "fg": "$white",
+		    "line": "$sky.400"
 		}
 	},
 	"scope":["colors"],
 	"colors" : {
-		"button.background": "565/600-mix->$blue.650&$prime.600",
-		"button.foreground": "565/600-mix->$blue.650&$prime.150",
-		"button.hoverBackground": "565/600-mix->$blue.650&$prime.550",
-		"button.border": "565/600-mix->$blue.650&$prime.300",
-		"button.secondaryBackground": "565/600-mix->$blue.650&$base.650",
-		"button.secondaryForeground": "565/600-mix->$blue.650&$base.150",
-		"button.secondaryHoverBackground": "565/600-mix->$blue.650&$base.600",
-		"button.separator": "565/600-mix->$blue.650&$base.400",
-		"breadcrumb.background": "565/600-mix->$blue.650&$base.900",
-		"breadcrumb.foreground": "565/600-mix->$blue.650&$base.450",
-		"breadcrumbPicker.background": "565/600-mix->$blue.650&$base.750",
-		"breadcrumb.focusForeground": "565/600-mix->$blue.650&$base.350",
-		"activityBar.background": "565/600-mix->$blue.650&$base.1000",
-		"activityBar.activeBackground": "565/600-mix->$blue.650&$base.800",
-		"activityBar.foreground": "565/600-mix->$blue.650&$base.450",
-		"activityBar.inactiveForeground": "565/600-mix->$blue.650&$base.600",
-		"activityBar.activeFocusBorder": "565/600-mix->$blue.650&$base.400",
-		"activityBar.activeBorder": "565/600-mix->$blue.650&$base.500",
-		"activityBar.border": "565/600-mix->$blue.650&$base.700",
-		"activityBar.dropBorder": "565/600-mix->$blue.650&$base.800",
-		"sideBar.background": "565/600-mix->$blue.650&$base.950",
-		"sideBar.foreground": "565/600-mix->$blue.650&$base.350",
-		"sideBar.border": "565/600-mix->$blue.650&$base.800",
-		"sideBar.dropBackground": "565/600-mix->$blue.650&$base.750/20",
-		"sideBarTitle.foreground": "565/600-mix->$blue.650&$base.100",
-		"sideBarSectionHeader.background": "565/600-mix->$blue.650&$base.850",
-		"sideBarSectionHeader.foreground": "565/600-mix->$blue.650&$base.200",
-		"sideBarSectionHeader.border": "565/600-mix->$blue.650&$base.700"
+		/**
+		* button
+		*/
+		"button.background": "$prime.650",
+		"button.foreground": "$prime.150",
+		"button.hoverBackground": "$prime.550",
+		"button.border": "$prime.300",
+		"button.secondaryBackground": "$btn.bg",
+		"button.secondaryForeground": "$btn.fg",
+		"button.secondaryHoverBackground": "$base.600",
+		"button.separator": "$sep",
+		/**
+		* dropdown
+		* It is just denotes button for dropdown in terminal for example
+		*/
+		"dropdown.background": "$btn.bg",
+		"dropdown.foreground": "$btn.fg",
+		"dropdown.border": "$btn.line",
+		"dropdown.listBackground": "$list.bg",
+		/**
+		* menu
+		*/
+		"menu.background": "$list.bg",
+		"menu.foreground": "$list.fg",
+		"menu.border": "$list.line",
+		"menu.selectionBackground": "$item.bg",
+		"menu.selectionForeground": "$item.fg",
+		"menu.selectionBorder": "$item.line",
+		"menu.separatorBackground": "$sep",
+		"menubar.selectionBackground": "$sky.750",
+		"menubar.selectionForeground": "$white",
+		"menubar.selectionBorder": "$sky.550",
+		/**
+		* breadcrumb
+		*/
+		"breadcrumb.background": "$base.900",
+		"breadcrumb.foreground": "$base.450",
+		"breadcrumbPicker.background": "$list.bg",
+		"breadcrumb.focusForeground": "$base.350",
+		/**
+		* activityBar
+		*/
+		"activityBar.background": "$base.1000",
+		"activityBar.activeBackground": "$base.800",
+		"activityBar.foreground": "$base.450",
+		"activityBar.inactiveForeground": "$base.600",
+		"activityBar.activeFocusBorder": "$base.400",
+		"activityBar.activeBorder": "$base.500",
+		"activityBar.border": "$base.700",
+		"activityBar.dropBorder": "$base.800",
+		/**
+		* sideBar
+		*/
+		"sideBar.background": "$base.950",
+		"sideBar.foreground": "$base.350",
+		"sideBar.border": "$base.800",
+		"sideBar.dropBackground": "$base.750/20",
+		"sideBarTitle.foreground": "$base.100",
+		"sideBarSectionHeader.background": "$base.850",
+		"sideBarSectionHeader.foreground": "$base.200",
+		"sideBarSectionHeader.border": "$base.700"
+
 	}
 }

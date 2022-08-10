@@ -6,6 +6,7 @@ const colors = {
 	white: "#fff",
 	..._colors,
 	base: _colors.slate,
+	hipen: _colors.gold,
 	prime: _colors.blue,
 }
 
