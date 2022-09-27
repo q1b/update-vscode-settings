@@ -1,4 +1,4 @@
-import * as _colors from "./temp.js"
+import * as _colors from "./dark.js"
 
 const colors = {
 	transparent: "#fff0",
@@ -6,7 +6,8 @@ const colors = {
 	white: "#fff",
 	..._colors,
 	base: _colors.slate,
-	hipen: _colors.gold,
+	// can be used for special type of elements like command pallete
+	hipe: _colors.sky,
 	prime: _colors.blue,
 }
 
