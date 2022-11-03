@@ -4,7 +4,7 @@
 	"$schema": "vscode://schemas/color-theme",
 	"vars":{
         "link": {
-            "active":"3/2-glow->$blue.450",
+            "active":"4/2-glow->$blue.450",
             "default":"3/2-glow->$blue.550"
         },
         "error":{
@@ -75,15 +75,17 @@
 			"fg":"$prime.150",
 			"line":"$prime.400/40"
         },
+		// used for [activeSelection] -> color for the selected item when the list/tree is active.
         "i_p":{
-			"bg":"$hipe.650/30",
-			"fg":"$hipe.250",
-			"line":"$hipe.400/40"
+			"bg":"$base.650/30",
+			"fg":"$base.250",
+			"line":"$base.400/40"
         },
+		// used for [inactiveSelection] -> color for the selected item when the list/tree is inactive.
         "ii_p":{
-			"bg":"$hipe.650/20",
-			"fg":"$hipe.150",
-			"line":"$hipe.400/40"
+			"bg":"$base.650/20",
+			"fg":"$base.150",
+			"line":"$base.400/40"
         },
         // defined for both minimap, and editor
         "scrollbar":{
@@ -322,13 +324,13 @@
 		* Side Bar
 		*/
 		"sideBar.background": "$base.950",
-		"sideBar.foreground": "$base.250",
+		"sideBar.foreground": "$base.300",
 		"sideBar.border": "$base.800",
 		"sideBar.dropBackground": "$base.750/20",
-		"sideBarTitle.foreground": "$base.100",
+		"sideBarTitle.foreground": "$base.300",
 		"sideBarSectionHeader.background": "$base.850",
-		"sideBarSectionHeader.foreground": "$base.200",
-		"sideBarSectionHeader.border": "$base.700",
+		"sideBarSectionHeader.foreground": "$base.300",
+		"sideBarSectionHeader.border": "$base.600",
         /**
         * EDITOR
         */
@@ -368,7 +370,7 @@
 		//  Status Bar prominent items background color when hovering.
 		"statusBarItem.prominentHoverBackground": "$green.800",
 		//  Background color for the remote indicator on the status bar.
-		"statusBarItem.remoteBackground": "#ffffff",
+		"statusBarItem.remoteBackground": "$i_h.bg",
 		//  Foreground color for the remote indicator on the status bar.
 		"statusBarItem.remoteForeground": "$black",
 		//  Status bar error items background color. Error items stand out from other status bar entries to indicate error conditions.
@@ -380,7 +382,7 @@
 		//  Status bar warning items foreground color. Warning items stand out from other status bar entries to indicate warning conditions.
 		"statusBarItem.warningForeground": "$warning.bg",
 		//  Status bar item background color when hovering an item that contains two hovers.
-		"statusBarItem.compactHoverBackground": "$white",
+		"statusBarItem.compactHoverBackground": "glow->$i_h.bg",
 		//  Status bar item border color when focused on keyboard navigation.
 		"statusBarItem.focusBorder": "$teal.650",
         "statusBarItem.settingsProfilesBackground": "$sky.550",
@@ -459,5 +461,30 @@
 		"terminalCommandDecoration.successBackground": "$teal.550",
 		//  The terminal command decoration background color for error commands.
 		"terminalCommandDecoration.errorBackground": "$error.bg",
+		"editorGroupHeader.tabsBackground": "$base.850",
+		"editorGroupHeader.tabsBorder": "$base.750",
+		"editorGroupHeader.border": "$base.800",
+		"editorGroupHeader.noTabsBackground": "$base.900",
+		"editorGroup.dropBackground": "$drop",
+		"editorGroup.dropIntoPromptBackground": "$btn.bg",
+		"editorGroup.dropIntoPromptForeground": "$btn.fg",
+		"editorGroup.dropIntoPromptBorder": "$btn.line",
+		"editorGroup.emptyBackground": "$base.950",
+		"editorGroup.focusedEmptyBorder": "$red.550",
+		"tab.activeBackground": "$base.750",
+		"tab.activeForeground": "$base.200",
+		"tab.activeBorder": "$base.600",
+		"tab.activeBorderTop": "$transparent",
+		"tab.inactiveBackground": "1/6-dim->$base.750",
+		"tab.inactiveForeground": "$ii_p.fg",
+		"tab.hoverBackground": "$base.700",
+		"tab.hoverForeground": "$i_h.fg",
+		"tab.hoverBorder": "$i_h.line",
+		"tab.border": "$base.750",
+		"tab.lastPinnedBorder": "$base.400/20",
+		// "tab.activeModifiedBorder": "#ff0000",
+		// "tab.inactiveModifiedBorder": "#ff0000"
+		"tab.unfocusedActiveForeground": "$base.400",
+		"tab.unfocusedInactiveForeground": "$base.550",
 	}
 }
