@@ -6,7 +6,6 @@
   "workbench.editor.tabSizing": "shrink",
   "window.commandCenter": false,
   "editor.suggestSelection": "first",
-
   /**
    * Better Defaults
    **/
@@ -69,7 +68,6 @@
   "editor.glyphMargin": false,
   "editor.lineNumbers": "off",
   "editor.renderWhitespace": "none",
-
   /**
    * Typography
    **/
@@ -142,7 +140,6 @@
    **/
   // Include "-" in word selection.
   "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?$-",
-
   "window.titleBarStyle": "custom",
   "window.title": "🗂️ ${rootName}${separator}${dirty}📂 ${activeEditorShort}${separator}",
   "window.titleSeparator": " - ",
