@@ -1,499 +1,497 @@
 {
-  // https://play.tailwindcss.com/KRdy96E2yN theme
-  // https://play.tailwindcss.com/TRKarp06l4 dark theme
-  "$schema": "vscode://schemas/color-theme",
-  "vars": {
-    "link": {
-      "active": "4/2-glow->$blue.450",
-      "default": "3/2-glow->$blue.550"
-    },
-    "error": {
-      "bg": "$mauve.900",
-      "fg": "$red.450",
-      "line": "$red.500/40"
-    },
-    "warning": {
-      "bg": "$sand.900",
-      "fg": "$yellow.450",
-      "line": "$yellow.500/40"
-    },
-    "info": {
-      "bg": "$slate.1000",
-      "fg": "$blue.450",
-      "line": "$indigo.500/40"
-    },
-    "error_1": {
-      "bg": "$base.800",
-      "fg": "$red.450",
-      "line": "$red.500/40"
-    },
-    "warning_1": {
-      "bg": "$base.800",
-      "fg": "$yellow.450",
-      "line": "$yellow.500/40"
-    },
-    "info_1": {
-      "bg": "$base.800",
-      "fg": "$indigo.450",
-      "line": "$indigo.500/40"
-    },
-    "sep": {
-      "default": "$base.400"
-    },
-    "drop": {
-      "default": "$base.800/20",
-      "line": "$base.550"
-    },
-    "btn": {
-      "bg": "$base.600",
-      "fg": "$base.150",
-      "line": "$base.400/40"
-    },
-    "list": {
-      "bg": "$base.900",
-      "fg": "$base.250",
-      // for inactive unfg
-      "unfg": "$base.350",
-      "line": "$base.400/40"
-    },
-    "selection": {
-      "bg": "$base.550/30",
-      "fg": "$base.200"
-    },
-    "i_h": {
-      "bg": "$base.650/50",
-      "fg": "$base.150",
-      "line": "$base.400/40"
-    },
-    "i_f": {
-      "bg": "$base.700/70",
-      "fg": "$base.150",
-      "line": "$base.400/40"
-    },
-    "ii_f": {
-      "bg": "$base.850/70",
-      "fg": "$prime.150",
-      "line": "$prime.400/40"
-    },
-    // used for [activeSelection] -> color for the selected item when the list/tree is active.
-    "i_p": {
-      "bg": "$base.650/30",
-      "fg": "$base.250",
-      "line": "$base.400/40"
-    },
-    // used for [inactiveSelection] -> color for the selected item when the list/tree is inactive.
-    "ii_p": {
-      "bg": "$base.650/20",
-      "fg": "$base.150",
-      "line": "$base.400/40"
-    },
-    // defined for both minimap, and editor
-    "scrollbar": {
-      "default": "$base.550/30",
-      "hover": "$base.550/50",
-      "active": "$base.450/30"
-    },
-    "badge": {
-      "bg": "$prime.550",
-      "fg": "$prime.150"
-    }
-  },
-  "scope": [
-    "colors"
-  ],
-  "colors": {
-    /**
-        * base
-        */
-    "textLink.foreground": "$link",
-    "textLink.activeForeground": "$link.active",
-    /**
-        * badge
-        */
-    "badge.background": "$badge.bg",
-    "badge.foreground": "$badge.fg",
-    "activityBarBadge.background": "$badge.bg",
-    "activityBarBadge.foreground": "$badge.fg",
-    /**
-        * scrollbar
-        */
-    "scrollbar.shadow": "dim->$base.1000",
-    "scrollbarSlider.background": "$scrollbar",
-    "scrollbarSlider.hoverBackground": "$scrollbar.hover",
-    "scrollbarSlider.activeBackground": "$scrollbar.active",
-    "minimapSlider.background": "$scrollbar",
-    "minimapSlider.hoverBackground": "$scrollbar.hover",
-    "minimapSlider.activeBackground": "$scrollbar.active",
-    /**
-        * Keybinding label
-        */
-    "keybindingLabel.background": "dim->$i_f.bg",
-    "keybindingLabel.foreground": "glow->$i_f.fg",
-    "keybindingLabel.bottomBorder": "$cyan.450",
-    "keybindingLabel.border": "$base.450",
-    /**
-        * Banner colors
-        */
-    "banner.background": "$base.850",
-    "banner.foreground": "$base.150",
-    "banner.iconForeground": "$white",
-    /**
-        * progress bar
-        */
-    "progressBar.background": "$cyan.400",
-    /**
-        * checkbox
-        */
-    "checkbox.background": "dim->$base.1000",
-    "checkbox.foreground": "$green.450",
-    "checkbox.border": "$base.700",
-    /**
-		* button
-		*/
-    "button.background": "$prime.650",
-    "button.foreground": "$prime.150",
-    "button.hoverBackground": "$prime.550",
-    "button.border": "$prime.300",
-    "button.secondaryBackground": "$btn.bg",
-    "button.secondaryForeground": "$btn.fg",
-    "button.secondaryHoverBackground": "6/10-glow->$btn.bg",
-    "button.separator": "$sep",
-    /**
-        * Input Controls
-        */
-    "input.background": "$base.850",
-    "input.border": "$base.600/40",
-    "input.foreground": "$base.50",
-    "input.placeholderForeground": "$base.600",
-    // activated options in input fields
-    "inputOption.activeForeground": "$slate.300",
-    "inputOption.activeBackground": "$slate.600",
-    "inputOption.activeBorder": "$slate.600",
-    "inputOption.hoverBackground": "$slate.700",
-    // Input Validations
-    //  color for error severity.
-    "inputValidation.errorBackground": "$error.bg",
-    //  color for error severity.
-    "inputValidation.errorForeground": "$error.fg",
-    //  color for error severity.
-    "inputValidation.errorBorder": "$error.line",
-    //  color for information severity.
-    "inputValidation.infoBackground": "$info.bg",
-    //  color for information severity.
-    "inputValidation.infoForeground": "$info.fg",
-    //  color for information severity.
-    "inputValidation.infoBorder": "$info.line",
-    //  color for information warning.
-    "inputValidation.warningBackground": "$warning.bg",
-    //  color for warning severity.
-    "inputValidation.warningForeground": "$warning.fg",
-    //  color for warning severity.
-    "inputValidation.warningBorder": "$warning.line",
-    /**
-		* dropdown
-		* It is just denotes button for dropdown in terminal for example
-		*/
-    "dropdown.background": "$btn.bg",
-    "dropdown.foreground": "$btn.fg",
-    "dropdown.border": "$btn.line",
-    "dropdown.listBackground": "$list.bg",
-    /**
-		* menu
-		*/
-    "menu.background": "$list.bg",
-    "menu.foreground": "$list.fg",
-    "menu.border": "$list.line",
-    "menu.selectionBackground": "$i_h.bg",
-    "menu.selectionForeground": "$i_h.fg",
-    "menu.selectionBorder": "$i_h.line",
-    "menu.separatorBackground": "$sep",
-    "menubar.selectionBackground": "$i_h.bg",
-    "menubar.selectionForeground": "$i_h.fg",
-    "menubar.selectionBorder": "$i_h.line",
-    /**
-        * list 
-        * `->` means `indicates`
-        * interactions 
-        */
-    // hover -> colors, when hovering over items using the mouse.
-    "list.hoverBackground": "$i_h.bg",
-    "list.hoverForeground": "$i_h.fg",
-    // focus -> color for the focused item when the list/tree is active.
-    "list.focusBackground": "$i_f.bg",
-    "list.focusForeground": "$i_f.fg",
-    "list.focusOutline": "$transparent",
-    "list.inactiveFocusBackground": "$ii_f.bg",
-    "list.inactiveFocusOutline": "$transparent",
-    // activeSelection -> color for the selected item when the list/tree is active.
-    "list.activeSelectionBackground": "$i_p.bg",
-    "list.activeSelectionForeground": "$i_p.fg",
-    "list.activeSelectionIconForeground": "$i_p.fg",
-    //  List/Tree outline color for the focused item when the list/tree is active and selected.
-    "list.focusAndSelectionOutline": "$transparent",
-    // inactiveSelection -> color for the selected item when the list/tree is inactive.
-    "list.inactiveSelectionBackground": "$ii_p.bg",
-    "list.inactiveSelectionForeground": "$ii_p.fg",
-    "list.inactiveSelectionIconForeground": "$ii_p.fg",
-    "list.dropBackground": "$drop",
-    //  List/Tree foreground color of the when searching inside the list/tree.
-    "list.highlightForeground": "$white",
-    //  List/Tree Filter background color of typed text when searching inside the list/tree.
-    "listFilterWidget.background": "$base.900",
-    //  List/Tree Filter Widget's outline color of typed text when searching inside the list/tree.
-    "listFilterWidget.outline": "$base.800",
-    //  List/Tree Filter Widget's outline color when no match is found of typed text when searching inside the list/tree.
-    "listFilterWidget.noMatchesOutline": "$green.600",
-    //  Background color of the filtered matches in lists and trees.
-    "list.filterMatchBackground": "$selection.bg",
-    //  Border color of the filtered matches in lists and trees.
-    "list.filterMatchBorder": "$selection.fg",
-    //  List/Tree foreground color of the match highlights
-    // on actively focused items when searching inside the list/tree.
-    "list.focusHighlightForeground": "$i_f.fg",
-    //  List/Tree foreground color for invalid items, for example an unresolved root in explorer.
-    "list.invalidItemForeground": "$error.fg",
-    //  Foreground color of list items containing errors.
-    "list.errorForeground": "$error.fg",
-    //  Foreground color of list items containing warnings.
-    "list.warningForeground": "$warning.fg",
-    //  List/Tree foreground color for items that are deemphasized.
-    "list.deemphasizedForeground": "$base.350",
-    "listFilterWidget.shadow": "dim->$list.bg",
-    /**
-        * commandCenter
-        */
-    "commandCenter.background": "$btn.bg",
-    "commandCenter.foreground": "$btn.fg",
-    "commandCenter.activeBackground": "1/3-glow->$btn.bg",
-    "commandCenter.activeForeground": "1/3-glow->$btn.fg",
-    "commandCenter.border": "$btn.line",
-    /**
-        * quick Inputs which include our command pallete
-        */
-    "quickInput.background": "1/3-dim->$list.bg",
-    "quickInput.foreground": "$list.unfg",
-    "quickInputList.focusBackground": "$i_p.bg",
-    "quickInputList.focusForeground": "$i_p.fg",
-    "quickInputList.focusIconForeground": "$i_p.fg",
-    "quickInputTitle.background": "1/4-dim->$list.bg",
-    /**
-        * Extensions
-        */
-    // Extensions colors
-    //  view button colors (for example Install button).
-    "extensionButton.prominentForeground": "$prime.150",
-    "extensionButton.prominentBackground": "$prime.650",
-    "extensionButton.prominentHoverBackground": "$prime.550",
-    // colors for the remote badge in the extensions view.
-    "extensionBadge.remoteBackground": "$black",
-    "extensionBadge.remoteForeground": "$white",
-    //  The icon color for extension ratings.
-    "extensionIcon.starForeground": "$cyan.550",
-    //  The icon color for extension verified publisher.
-    "extensionIcon.verifiedForeground": "$cyan.400",
-    //  The icon color for pre-release extension.
-    "extensionIcon.preReleaseForeground": "$indigo.500",
-    //  The icon color for extension sponsor.
-    "extensionIcon.sponsorForeground": "$amber.500",
-    /**
-		* breadcrumb
-		*/
-    "breadcrumb.background": "$base.900",
-    "breadcrumb.foreground": "$base.450",
-    "breadcrumb.activeSelectionForeground": "$base.150",
-    "breadcrumbPicker.background": "$list.bg",
-    "breadcrumb.focusForeground": "$base.350",
-    /**
-        * Title Bar
-        */
-    "titleBar.activeForeground": "$base.250",
-    "titleBar.activeBackground": "$base.850",
-    "titleBar.border": "$base.650",
-    "titleBar.inactiveForeground": "$base.400",
-    "titleBar.inactiveBackground": "$base.900",
-    /**
-		* Activity Bar
-		*/
-    "activityBar.background": "$base.1000",
-    "activityBar.activeBackground": "$base.800",
-    "activityBar.foreground": "$base.450",
-    "activityBar.inactiveForeground": "$base.600",
-    "activityBar.activeFocusBorder": "$base.400",
-    "activityBar.activeBorder": "$base.500",
-    "activityBar.border": "$base.700",
-    "activityBar.dropBorder": "$drop",
-    /**
-		* Side Bar
-		*/
-    "sideBar.background": "$base.950",
-    "sideBar.foreground": "$base.300",
-    "sideBar.border": "$base.800",
-    "sideBar.dropBackground": "$base.750/20",
-    "sideBarTitle.foreground": "$base.300",
-    "sideBarSectionHeader.background": "$base.850",
-    "sideBarSectionHeader.foreground": "$base.300",
-    "sideBarSectionHeader.border": "$base.600",
-    /**
-        * EDITOR
-        */
-    // EDITOR
-    "editor.background": "$base.950",
-    "editor.foreground": "$white",
-    "editorLineNumber.foreground": "$base.500",
-    "editorLineNumber.activeForeground": "$base.100",
-    "editorCursor.background": "$base.900",
-    "editorCursor.foreground": "$base.200",
-    /**
-        * Status Bar
-        */
-    "statusBar.background": "$base.750",
-    "statusBar.foreground": "$base.350",
-    "statusBar.border": "$base.850",
-    //  when a program is being debugged.
-    "statusBar.debuggingBackground": "$green.300",
-    //  Status Bar foreground color when a program is being debugged.
-    "statusBar.debuggingForeground": "$teal.800",
-    //  Status Bar border color separating the Status Bar and editor when a program is being debugged.
-    "statusBar.debuggingBorder": "$slate.400",
-    //  Status Bar foreground color when no folder is opened.
-    "statusBar.noFolderForeground": "$teal.800",
-    //  Status Bar background color when no folder is opened.
-    "statusBar.noFolderBackground": "$green.300",
-    //  Status Bar border color separating the Status Bar and editor when no folder is opened.
-    "statusBar.noFolderBorder": "$slate.400",
-    //  Status Bar prominent items foreground color.
-    "statusBar.focusBorder": "$base.700",
-    // when clicked
-    "statusBarItem.activeBackground": "$ii_f.bg",
-    "statusBarItem.hoverBackground": "$i_h.bg",
-    "statusBarItem.prominentForeground": "$teal.100",
-    //  Status Bar prominent items background color.
-    "statusBarItem.prominentBackground": "$teal.600",
-    //  Status Bar prominent items background color when hovering.
-    "statusBarItem.prominentHoverBackground": "$green.800",
-    //  Background color for the remote indicator on the status bar.
-    "statusBarItem.remoteBackground": "$i_h.bg",
-    //  Foreground color for the remote indicator on the status bar.
-    "statusBarItem.remoteForeground": "$black",
-    //  Status bar error items background color. Error items stand out from other status bar entries to indicate error conditions.
-    "statusBarItem.errorBackground": "$error.bg",
-    //  Status bar error items foreground color. Error items stand out from other status bar entries to indicate error conditions.
-    "statusBarItem.errorForeground": "$error.fg",
-    //  Status bar warning items background color. Warning items stand out from other status bar entries to indicate warning conditions.
-    "statusBarItem.warningBackground": "$warning.bg",
-    //  Status bar warning items foreground color. Warning items stand out from other status bar entries to indicate warning conditions.
-    "statusBarItem.warningForeground": "$warning.bg",
-    //  Status bar item background color when hovering an item that contains two hovers.
-    "statusBarItem.compactHoverBackground": "glow->$i_h.bg",
-    //  Status bar item border color when focused on keyboard navigation.
-    "statusBarItem.focusBorder": "$teal.650",
-    "statusBarItem.settingsProfilesBackground": "$sky.550",
-    "statusBarItem.settingsProfilesForeground": "$base.1000",
-    "sash.hoverBorder": "$prime.450",
-    "editorGroup.border": "$base.550",
-    /**
-        * Panel
-        */
-    "panel.background": "$base.950",
-    "panel.border": "$slate.850",
-    //  Drag and drop feedback color for the panel titles. Panels are shown below the editor area and contain views like output and integrated terminal.
-    "panel.dropBorder": "$drop.line",
-    "panelTitle.activeBorder": "$hipe.550",
-    "panelTitle.activeForeground": "$base.350",
-    "panelTitle.inactiveForeground": "$slate.450",
-    //  Panel section border color used when multiple views are stacked horizontally in the panel. Panels are shown below the editor area and contain views like output and integrated terminal.
-    "panelSection.border": "$slate.100",
-    //  Drag and drop feedback color for the panel sections. The color should have transparency so that the panel sections can still shine through. Panels are shown below the editor area and contain views like output and integrated terminal.
-    "panelSection.dropBackground": "$drop",
-    //  Panel section header background color. 
-    // Panels are shown below the editor area and contain views like output and integrated terminal.
-    "panelSectionHeader.background": "$base.500",
-    //  Panel section header foreground color. Panels are shown below the editor area and contain views like output and integrated terminal.
-    "panelSectionHeader.foreground": "$white",
-    //  Panel section header border color used when multiple views are stacked vertically in the panel. Panels are shown below the editor area and contain views like output and integrated terminal.
-    "panelSectionHeader.border": "$slate.600",
-    "panelInput.border": "$transparent",
-    // Integrated Terminal $
-    // https://code.visualstudio.com/docs/getstarted/theme-color-reference#_integrated-terminal-colors
-    "terminal.ansiBlack": "#000000",
-    "terminal.ansiRed": "$red.500",
-    "terminal.ansiGreen": "$green.500",
-    "terminal.ansiYellow": "$yellow.500",
-    "terminal.ansiBlue": "$blue.500",
-    "terminal.ansiMagenta": "$crimson.500",
-    "terminal.ansiCyan": "$cyan.500",
-    "terminal.ansiWhite": "$slate.100",
-    "terminal.ansiBrightBlack": "$slate.900",
-    "terminal.ansiBrightRed": "$red.500",
-    "terminal.ansiBrightGreen": "$green.400",
-    "terminal.ansiBrightYellow": "$yellow.400",
-    "terminal.ansiBrightBlue": "$blue.400",
-    "terminal.ansiBrightMagenta": "$crimson.400",
-    "terminal.ansiBrightCyan": "$cyan.400",
-    "terminal.ansiBrightWhite": "$white",
-    //  The background of the Integrated Terminal's viewport.
-    "terminal.background": "$base.900",
-    //  The color of the border that separates split panes within the terminal. This defaults to panel.border.
-    "terminal.border": "$base.500",
-    //  The default foreground color of the Integrated Terminal.
-    "terminal.foreground": "$slate.100",
-    //  The selection background color of the terminal.
-    "terminal.selectionBackground": "$slate.500",
-    //  The selection foreground color of the terminal. When this is null the selection foreground will be retained and have the minimum contrast ratio feature applied.
-    "terminal.selectionForeground": "$slate.100",
-    //  Color of the current search match in the terminal.
-    "terminal.findMatchBackground": "$cyan.700",
-    //  Border color of the current search match in the terminal.
-    "terminal.findMatchBorder": "$cyan.200/20",
-    //  Color of the other search matches in the terminal
-    "terminal.findMatchHighlightBackground": "$slate.700",
-    //  Border color of the other search matches in the terminal.
-    "terminal.findMatchHighlightBorder": "$transparent",
-    //  The background color of the terminal cursor. Allows customizing the color of a character overlapped by a block cursor.
-    "terminalCursor.background": "$white",
-    //  The foreground color of the terminal cursor.
-    "terminalCursor.foreground": "$slate.400",
-    // The background color when dragging on top of terminals. The color should have transparency so that the terminal contents can still shine through.
-    "terminal.dropBackground": "$drop",
-    //  Border on the side of the terminal tab in the panel. This defaults to tab.activeBorder.
-    "terminal.tab.activeBorder": "$hipe.550",
-    //  The default terminal command decoration background color.
-    "terminalCommandDecoration.defaultBackground": "$slate.550",
-    //  The terminal command decoration background color for successful commands.
-    "terminalCommandDecoration.successBackground": "$teal.550",
-    //  The terminal command decoration background color for error commands.
-    "terminalCommandDecoration.errorBackground": "$error.bg",
-    "editorGroupHeader.tabsBackground": "$base.850",
-    "editorGroupHeader.tabsBorder": "$base.750",
-    "editorGroupHeader.border": "$base.800",
-    "editorGroupHeader.noTabsBackground": "$base.900",
-    "editorGroup.dropBackground": "$drop",
-    "editorGroup.dropIntoPromptBackground": "$btn.bg",
-    "editorGroup.dropIntoPromptForeground": "$btn.fg",
-    "editorGroup.dropIntoPromptBorder": "$btn.line",
-    "editorGroup.emptyBackground": "$base.950",
-    "editorGroup.focusedEmptyBorder": "$red.550",
-    "tab.activeBackground": "$base.750",
-    "tab.activeForeground": "$base.200",
-    "tab.activeBorder": "$base.600",
-    "tab.activeBorderTop": "$transparent",
-    "tab.inactiveBackground": "1/6-dim->$base.750",
-    "tab.inactiveForeground": "$ii_p.fg",
-    "tab.hoverBackground": "$base.700",
-    "tab.hoverForeground": "$i_h.fg",
-    "tab.hoverBorder": "$i_h.line",
-    "tab.border": "$base.750",
-    "tab.lastPinnedBorder": "$base.400/20",
-    // "tab.activeModifiedBorder": "#ff0000",
-    // "tab.inactiveModifiedBorder": "#ff0000"
-    "tab.unfocusedActiveForeground": "$base.400",
-    "tab.unfocusedInactiveForeground": "$base.550",
-    // hover Widget
-    "editor.hoverHighlightBackground": "$base.750",
-    "editorHoverWidget.statusBarBackground": "mix->$base.950&$base.1000",
-    "editorHoverWidget.background": "1/10-dim->$base.1000",
-    "editorHoverWidget.foreground": "$base.200",
-    "editorHoverWidget.border": "$base.750",
-    "editorHoverWidget.highlightForeground": "$white",
-  }
+	// https://play.tailwindcss.com/KRdy96E2yN theme
+	// https://play.tailwindcss.com/TRKarp06l4 dark theme
+	"$schema": "vscode://schemas/color-theme",
+	"vars": {
+		"link": {
+			"active": "4/2-glow->$blue.450",
+			"default": "3/2-glow->$blue.550"
+		},
+		"error": {
+			"bg": "$mauve.900",
+			"fg": "$red.450",
+			"line": "$red.500/40"
+		},
+		"warning": {
+			"bg": "$sand.900",
+			"fg": "$yellow.450",
+			"line": "$yellow.500/40"
+		},
+		"info": {
+			"bg": "$slate.1000",
+			"fg": "$blue.450",
+			"line": "$indigo.500/40"
+		},
+		"error_1": {
+			"bg": "$base.800",
+			"fg": "$red.450",
+			"line": "$red.500/40"
+		},
+		"warning_1": {
+			"bg": "$base.800",
+			"fg": "$yellow.450",
+			"line": "$yellow.500/40"
+		},
+		"info_1": {
+			"bg": "$base.800",
+			"fg": "$indigo.450",
+			"line": "$indigo.500/40"
+		},
+		"sep": {
+			"default": "$base.400"
+		},
+		"drop": {
+			"default": "$base.800/20",
+			"line": "$base.550"
+		},
+		"btn": {
+			"bg": "$base.600",
+			"fg": "$base.150",
+			"line": "$base.400/40"
+		},
+		"list": {
+			"bg": "$base.900",
+			"fg": "$base.250",
+			// for inactive unfg
+			"unfg": "$base.350",
+			"line": "$base.400/40"
+		},
+		"selection": {
+			"bg": "$base.550/30",
+			"fg": "$base.200"
+		},
+		"i_h": {
+			"bg": "$base.650/50",
+			"fg": "$base.150",
+			"line": "$base.400/40"
+		},
+		"i_f": {
+			"bg": "$base.700/70",
+			"fg": "$base.150",
+			"line": "$base.400/40"
+		},
+		"ii_f": {
+			"bg": "$base.850/70",
+			"fg": "$prime.150",
+			"line": "$prime.400/40"
+		},
+		// used for [activeSelection] -> color for the selected item when the list/tree is active.
+		"i_p": {
+			"bg": "$base.650/30",
+			"fg": "$base.250",
+			"line": "$base.400/40"
+		},
+		// used for [inactiveSelection] -> color for the selected item when the list/tree is inactive.
+		"ii_p": {
+			"bg": "$base.650/20",
+			"fg": "$base.150",
+			"line": "$base.400/40"
+		},
+		// defined for both minimap, and editor
+		"scrollbar": {
+			"default": "$base.550/30",
+			"hover": "$base.550/50",
+			"active": "$base.450/30"
+		},
+		"badge": {
+			"bg": "$prime.550",
+			"fg": "$prime.150"
+		}
+	},
+	"scope": ["colors"],
+	"colors": {
+		/**
+		 * base
+		 */
+		"textLink.foreground": "$link",
+		"textLink.activeForeground": "$link.active",
+		/**
+		 * badge
+		 */
+		"badge.background": "$badge.bg",
+		"badge.foreground": "$badge.fg",
+		"activityBarBadge.background": "$badge.bg",
+		"activityBarBadge.foreground": "$badge.fg",
+		/**
+		 * scrollbar
+		 */
+		"scrollbar.shadow": "dim->$base.1000",
+		"scrollbarSlider.background": "$scrollbar",
+		"scrollbarSlider.hoverBackground": "$scrollbar.hover",
+		"scrollbarSlider.activeBackground": "$scrollbar.active",
+		"minimapSlider.background": "$scrollbar",
+		"minimapSlider.hoverBackground": "$scrollbar.hover",
+		"minimapSlider.activeBackground": "$scrollbar.active",
+		/**
+		 * Keybinding label
+		 */
+		"keybindingLabel.background": "dim->$i_f.bg",
+		"keybindingLabel.foreground": "glow->$i_f.fg",
+		"keybindingLabel.bottomBorder": "$cyan.450",
+		"keybindingLabel.border": "$base.450",
+		/**
+		 * Banner colors
+		 */
+		"banner.background": "$base.850",
+		"banner.foreground": "$base.150",
+		"banner.iconForeground": "$white",
+		/**
+		 * progress bar
+		 */
+		"progressBar.background": "$cyan.400",
+		/**
+		 * checkbox
+		 */
+		"checkbox.background": "dim->$base.1000",
+		"checkbox.foreground": "$green.450",
+		"checkbox.border": "$base.700",
+		/**
+		 * button
+		 */
+		"button.background": "$prime.650",
+		"button.foreground": "$prime.150",
+		"button.hoverBackground": "$prime.550",
+		"button.border": "$prime.300",
+		"button.secondaryBackground": "$btn.bg",
+		"button.secondaryForeground": "$btn.fg",
+		"button.secondaryHoverBackground": "6/10-glow->$btn.bg",
+		"button.separator": "$sep",
+		/**
+		 * Input Controls
+		 */
+		"input.background": "$base.850",
+		"input.border": "$base.600/40",
+		"input.foreground": "$base.50",
+		"input.placeholderForeground": "$base.600",
+		// activated options in input fields
+		"inputOption.activeForeground": "$slate.300",
+		"inputOption.activeBackground": "$slate.600",
+		"inputOption.activeBorder": "$slate.600",
+		"inputOption.hoverBackground": "$slate.700",
+		// Input Validations
+		//  color for error severity.
+		"inputValidation.errorBackground": "$error.bg",
+		//  color for error severity.
+		"inputValidation.errorForeground": "$error.fg",
+		//  color for error severity.
+		"inputValidation.errorBorder": "$error.line",
+		//  color for information severity.
+		"inputValidation.infoBackground": "$info.bg",
+		//  color for information severity.
+		"inputValidation.infoForeground": "$info.fg",
+		//  color for information severity.
+		"inputValidation.infoBorder": "$info.line",
+		//  color for information warning.
+		"inputValidation.warningBackground": "$warning.bg",
+		//  color for warning severity.
+		"inputValidation.warningForeground": "$warning.fg",
+		//  color for warning severity.
+		"inputValidation.warningBorder": "$warning.line",
+		/**
+		 * dropdown
+		 * It is just denotes button for dropdown in terminal for example
+		 */
+		"dropdown.background": "$btn.bg",
+		"dropdown.foreground": "$btn.fg",
+		"dropdown.border": "$btn.line",
+		"dropdown.listBackground": "$list.bg",
+		/**
+		 * menu
+		 */
+		"menu.background": "$list.bg",
+		"menu.foreground": "$list.fg",
+		"menu.border": "$list.line",
+		"menu.selectionBackground": "$i_h.bg",
+		"menu.selectionForeground": "$i_h.fg",
+		"menu.selectionBorder": "$i_h.line",
+		"menu.separatorBackground": "$sep",
+		"menubar.selectionBackground": "$i_h.bg",
+		"menubar.selectionForeground": "$i_h.fg",
+		"menubar.selectionBorder": "$i_h.line",
+		/**
+		 * list
+		 * `->` means `indicates`
+		 * interactions
+		 */
+		// hover -> colors, when hovering over items using the mouse.
+		"list.hoverBackground": "$i_h.bg",
+		"list.hoverForeground": "$i_h.fg",
+		// focus -> color for the focused item when the list/tree is active.
+		"list.focusBackground": "$i_f.bg",
+		"list.focusForeground": "$i_f.fg",
+		"list.focusOutline": "$transparent",
+		"list.inactiveFocusBackground": "$ii_f.bg",
+		"list.inactiveFocusOutline": "$transparent",
+		// activeSelection -> color for the selected item when the list/tree is active.
+		"list.activeSelectionBackground": "$i_p.bg",
+		"list.activeSelectionForeground": "$i_p.fg",
+		"list.activeSelectionIconForeground": "$i_p.fg",
+		//  List/Tree outline color for the focused item when the list/tree is active and selected.
+		"list.focusAndSelectionOutline": "$transparent",
+		// inactiveSelection -> color for the selected item when the list/tree is inactive.
+		"list.inactiveSelectionBackground": "$ii_p.bg",
+		"list.inactiveSelectionForeground": "$ii_p.fg",
+		"list.inactiveSelectionIconForeground": "$ii_p.fg",
+		"list.dropBackground": "$drop",
+		//  List/Tree foreground color of the when searching inside the list/tree.
+		"list.highlightForeground": "$white",
+		//  List/Tree Filter background color of typed text when searching inside the list/tree.
+		"listFilterWidget.background": "$base.900",
+		//  List/Tree Filter Widget's outline color of typed text when searching inside the list/tree.
+		"listFilterWidget.outline": "$base.800",
+		//  List/Tree Filter Widget's outline color when no match is found of typed text when searching inside the list/tree.
+		"listFilterWidget.noMatchesOutline": "$green.600",
+		//  Background color of the filtered matches in lists and trees.
+		"list.filterMatchBackground": "$selection.bg",
+		//  Border color of the filtered matches in lists and trees.
+		"list.filterMatchBorder": "$selection.fg",
+		//  List/Tree foreground color of the match highlights
+		// on actively focused items when searching inside the list/tree.
+		"list.focusHighlightForeground": "$i_f.fg",
+		//  List/Tree foreground color for invalid items, for example an unresolved root in explorer.
+		"list.invalidItemForeground": "$error.fg",
+		//  Foreground color of list items containing errors.
+		"list.errorForeground": "$error.fg",
+		//  Foreground color of list items containing warnings.
+		"list.warningForeground": "$warning.fg",
+		//  List/Tree foreground color for items that are deemphasized.
+		"list.deemphasizedForeground": "$base.350",
+		"listFilterWidget.shadow": "dim->$list.bg",
+		/**
+		 * commandCenter
+		 */
+		"commandCenter.background": "$btn.bg",
+		"commandCenter.foreground": "$btn.fg",
+		"commandCenter.activeBackground": "1/3-glow->$btn.bg",
+		"commandCenter.activeForeground": "1/3-glow->$btn.fg",
+		"commandCenter.border": "$btn.line",
+		/**
+		 * quick Inputs which include our command pallete
+		 */
+		"quickInput.background": "1/3-dim->$list.bg",
+		"quickInput.foreground": "$list.unfg",
+		"quickInputList.focusBackground": "$i_p.bg",
+		"quickInputList.focusForeground": "$i_p.fg",
+		"quickInputList.focusIconForeground": "$i_p.fg",
+		"quickInputTitle.background": "1/4-dim->$list.bg",
+		/**
+		 * Extensions
+		 */
+		// Extensions colors
+		//  view button colors (for example Install button).
+		"extensionButton.prominentForeground": "$prime.150",
+		"extensionButton.prominentBackground": "$prime.650",
+		"extensionButton.prominentHoverBackground": "$prime.550",
+		// colors for the remote badge in the extensions view.
+		"extensionBadge.remoteBackground": "$black",
+		"extensionBadge.remoteForeground": "$white",
+		//  The icon color for extension ratings.
+		"extensionIcon.starForeground": "$cyan.550",
+		//  The icon color for extension verified publisher.
+		"extensionIcon.verifiedForeground": "$cyan.400",
+		//  The icon color for pre-release extension.
+		"extensionIcon.preReleaseForeground": "$indigo.500",
+		//  The icon color for extension sponsor.
+		"extensionIcon.sponsorForeground": "$amber.500",
+		/**
+		 * breadcrumb
+		 */
+		"breadcrumb.background": "$base.900",
+		"breadcrumb.foreground": "$base.450",
+		"breadcrumb.activeSelectionForeground": "$base.150",
+		"breadcrumbPicker.background": "$list.bg",
+		"breadcrumb.focusForeground": "$base.350",
+		/**
+		 * Title Bar
+		 */
+		"titleBar.activeForeground": "$base.250",
+		"titleBar.activeBackground": "$base.850",
+		"titleBar.border": "$base.650",
+		"titleBar.inactiveForeground": "$base.400",
+		"titleBar.inactiveBackground": "$base.900",
+		/**
+		 * Activity Bar
+		 */
+		"activityBar.background": "$base.1000",
+		"activityBar.activeBackground": "$base.800",
+		"activityBar.foreground": "$base.450",
+		"activityBar.inactiveForeground": "$base.600",
+		"activityBar.activeFocusBorder": "$base.400",
+		"activityBar.activeBorder": "$base.500",
+		"activityBar.border": "$base.700",
+		"activityBar.dropBorder": "$drop",
+		/**
+		 * Side Bar
+		 */
+		"sideBar.background": "$base.950",
+		"sideBar.foreground": "$base.300",
+		"sideBar.border": "$base.800",
+		"sideBar.dropBackground": "$base.750/20",
+		"sideBarTitle.foreground": "$base.300",
+		"sideBarSectionHeader.background": "$base.850",
+		"sideBarSectionHeader.foreground": "$base.300",
+		"sideBarSectionHeader.border": "$base.600",
+		/**
+		 * EDITOR
+		 */
+		// EDITOR
+		"editor.background": "$base.950",
+		"editor.foreground": "$white",
+		"editorLineNumber.foreground": "$base.500",
+		"editorLineNumber.activeForeground": "$base.100",
+		"editorCursor.background": "$base.900",
+		"editorCursor.foreground": "$base.200",
+		/**
+		 * Status Bar
+		 */
+		"statusBar.background": "$base.750",
+		"statusBar.foreground": "$base.350",
+		"statusBar.border": "$base.850",
+		//  when a program is being debugged.
+		"statusBar.debuggingBackground": "$green.300",
+		//  Status Bar foreground color when a program is being debugged.
+		"statusBar.debuggingForeground": "$teal.800",
+		//  Status Bar border color separating the Status Bar and editor when a program is being debugged.
+		"statusBar.debuggingBorder": "$slate.400",
+		//  Status Bar foreground color when no folder is opened.
+		"statusBar.noFolderForeground": "$teal.800",
+		//  Status Bar background color when no folder is opened.
+		"statusBar.noFolderBackground": "$green.300",
+		//  Status Bar border color separating the Status Bar and editor when no folder is opened.
+		"statusBar.noFolderBorder": "$slate.400",
+		//  Status Bar prominent items foreground color.
+		"statusBar.focusBorder": "$base.700",
+		// when clicked
+		"statusBarItem.activeBackground": "$ii_f.bg",
+		"statusBarItem.hoverBackground": "$i_h.bg",
+		"statusBarItem.prominentForeground": "$teal.100",
+		//  Status Bar prominent items background color.
+		"statusBarItem.prominentBackground": "$teal.600",
+		//  Status Bar prominent items background color when hovering.
+		"statusBarItem.prominentHoverBackground": "$green.800",
+		//  Background color for the remote indicator on the status bar.
+		"statusBarItem.remoteBackground": "$i_h.bg",
+		//  Foreground color for the remote indicator on the status bar.
+		"statusBarItem.remoteForeground": "$black",
+		//  Status bar error items background color. Error items stand out from other status bar entries to indicate error conditions.
+		"statusBarItem.errorBackground": "$error.bg",
+		//  Status bar error items foreground color. Error items stand out from other status bar entries to indicate error conditions.
+		"statusBarItem.errorForeground": "$error.fg",
+		//  Status bar warning items background color. Warning items stand out from other status bar entries to indicate warning conditions.
+		"statusBarItem.warningBackground": "$warning.bg",
+		//  Status bar warning items foreground color. Warning items stand out from other status bar entries to indicate warning conditions.
+		"statusBarItem.warningForeground": "$warning.bg",
+		//  Status bar item background color when hovering an item that contains two hovers.
+		"statusBarItem.compactHoverBackground": "glow->$i_h.bg",
+		//  Status bar item border color when focused on keyboard navigation.
+		"statusBarItem.focusBorder": "$teal.650",
+		"statusBarItem.settingsProfilesBackground": "$sky.550",
+		"statusBarItem.settingsProfilesForeground": "$base.1000",
+		"sash.hoverBorder": "$prime.450",
+		"editorGroup.border": "$base.550",
+		/**
+		 * Panel
+		 */
+		"panel.background": "$base.950",
+		"panel.border": "$slate.850",
+		//  Drag and drop feedback color for the panel titles. Panels are shown below the editor area and contain views like output and integrated terminal.
+		"panel.dropBorder": "$drop.line",
+		"panelTitle.activeBorder": "$hipe.550",
+		"panelTitle.activeForeground": "$base.350",
+		"panelTitle.inactiveForeground": "$slate.450",
+		//  Panel section border color used when multiple views are stacked horizontally in the panel. Panels are shown below the editor area and contain views like output and integrated terminal.
+		"panelSection.border": "$slate.100",
+		//  Drag and drop feedback color for the panel sections. The color should have transparency so that the panel sections can still shine through. Panels are shown below the editor area and contain views like output and integrated terminal.
+		"panelSection.dropBackground": "$drop",
+		//  Panel section header background color.
+		// Panels are shown below the editor area and contain views like output and integrated terminal.
+		"panelSectionHeader.background": "$base.500",
+		//  Panel section header foreground color. Panels are shown below the editor area and contain views like output and integrated terminal.
+		"panelSectionHeader.foreground": "$white",
+		//  Panel section header border color used when multiple views are stacked vertically in the panel. Panels are shown below the editor area and contain views like output and integrated terminal.
+		"panelSectionHeader.border": "$slate.600",
+		"panelInput.border": "$transparent",
+		// Integrated Terminal $
+		// https://code.visualstudio.com/docs/getstarted/theme-color-reference#_integrated-terminal-colors
+		"terminal.ansiBlack": "#000000",
+		"terminal.ansiRed": "$red.500",
+		"terminal.ansiGreen": "$green.500",
+		"terminal.ansiYellow": "$yellow.500",
+		"terminal.ansiBlue": "$blue.500",
+		"terminal.ansiMagenta": "$crimson.500",
+		"terminal.ansiCyan": "$cyan.500",
+		"terminal.ansiWhite": "$slate.100",
+		"terminal.ansiBrightBlack": "$slate.900",
+		"terminal.ansiBrightRed": "$red.500",
+		"terminal.ansiBrightGreen": "$green.400",
+		"terminal.ansiBrightYellow": "$yellow.400",
+		"terminal.ansiBrightBlue": "$blue.400",
+		"terminal.ansiBrightMagenta": "$crimson.400",
+		"terminal.ansiBrightCyan": "$cyan.400",
+		"terminal.ansiBrightWhite": "$white",
+		//  The background of the Integrated Terminal's viewport.
+		"terminal.background": "$base.900",
+		//  The color of the border that separates split panes within the terminal. This defaults to panel.border.
+		"terminal.border": "$base.500",
+		//  The default foreground color of the Integrated Terminal.
+		"terminal.foreground": "$slate.100",
+		//  The selection background color of the terminal.
+		"terminal.selectionBackground": "$slate.500",
+		//  The selection foreground color of the terminal. When this is null the selection foreground will be retained and have the minimum contrast ratio feature applied.
+		"terminal.selectionForeground": "$slate.100",
+		//  Color of the current search match in the terminal.
+		"terminal.findMatchBackground": "$cyan.700",
+		//  Border color of the current search match in the terminal.
+		"terminal.findMatchBorder": "$cyan.200/20",
+		//  Color of the other search matches in the terminal
+		"terminal.findMatchHighlightBackground": "$slate.700",
+		//  Border color of the other search matches in the terminal.
+		"terminal.findMatchHighlightBorder": "$transparent",
+		//  The background color of the terminal cursor. Allows customizing the color of a character overlapped by a block cursor.
+		"terminalCursor.background": "$white",
+		//  The foreground color of the terminal cursor.
+		"terminalCursor.foreground": "$slate.400",
+		// The background color when dragging on top of terminals. The color should have transparency so that the terminal contents can still shine through.
+		"terminal.dropBackground": "$drop",
+		//  Border on the side of the terminal tab in the panel. This defaults to tab.activeBorder.
+		"terminal.tab.activeBorder": "$hipe.550",
+		//  The default terminal command decoration background color.
+		"terminalCommandDecoration.defaultBackground": "$slate.550",
+		//  The terminal command decoration background color for successful commands.
+		"terminalCommandDecoration.successBackground": "$teal.550",
+		//  The terminal command decoration background color for error commands.
+		"terminalCommandDecoration.errorBackground": "$error.bg",
+		"editorGroupHeader.tabsBackground": "$base.850",
+		"editorGroupHeader.tabsBorder": "$base.750",
+		"editorGroupHeader.border": "$base.800",
+		"editorGroupHeader.noTabsBackground": "$base.900",
+		"editorGroup.dropBackground": "$drop",
+		"editorGroup.dropIntoPromptBackground": "$btn.bg",
+		"editorGroup.dropIntoPromptForeground": "$btn.fg",
+		"editorGroup.dropIntoPromptBorder": "$btn.line",
+		"editorGroup.emptyBackground": "$base.950",
+		"editorGroup.focusedEmptyBorder": "$red.550",
+		"tab.activeBackground": "$base.750",
+		"tab.activeForeground": "$base.200",
+		"tab.activeBorder": "$base.600",
+		"tab.activeBorderTop": "$transparent",
+		"tab.inactiveBackground": "1/6-dim->$base.750",
+		"tab.inactiveForeground": "$ii_p.fg",
+		"tab.hoverBackground": "$base.700",
+		"tab.hoverForeground": "$i_h.fg",
+		"tab.hoverBorder": "$i_h.line",
+		"tab.border": "$base.750",
+		"tab.lastPinnedBorder": "$base.400/20",
+		// "tab.activeModifiedBorder": "#ff0000",
+		// "tab.inactiveModifiedBorder": "#ff0000"
+		"tab.unfocusedActiveForeground": "$base.400",
+		"tab.unfocusedInactiveForeground": "$base.550",
+		// hover Widget
+		"editor.hoverHighlightBackground": "$base.750",
+		"editorHoverWidget.statusBarBackground": "mix->$base.950&$base.1000",
+		"editorHoverWidget.background": "1/10-dim->$base.1000",
+		"editorHoverWidget.foreground": "$base.200",
+		"editorHoverWidget.border": "$base.750",
+		"editorHoverWidget.highlightForeground": "$white"
+	}
 }

@@ -5,7 +5,7 @@ const colors = {
 	black: "#000",
 	white: "#fff",
 	..._colors,
-	base: _colors.sand,
+	base: _colors.sage,
 	// can be used for special type of elements like command pallete
 	hipe: _colors.sky,
 	prime: _colors.blue,
