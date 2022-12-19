@@ -8,7 +8,7 @@
 			"default": "3/2-glow->$blue.550"
 		},
 		"error": {
-			"bg": "$mauve.900",
+			"bg": "$red.900",
 			"fg": "$red.450",
 			"line": "$red.500/40"
 		},
@@ -105,6 +105,9 @@
 		 */
 		"textLink.foreground": "$link",
 		"textLink.activeForeground": "$link.active",
+		"foreground": "$base.100",
+		"errorForeground": "$error.fg",
+		"focusBorder": "$base.450",
 		/**
 		 * badge
 		 */
@@ -115,7 +118,7 @@
 		/**
 		 * scrollbar
 		 */
-		"scrollbar.shadow": "dim->$base.1000",
+		"scrollbar.shadow": "$base.1000",
 		"scrollbarSlider.background": "$scrollbar",
 		"scrollbarSlider.hoverBackground": "$scrollbar.hover",
 		"scrollbarSlider.activeBackground": "$scrollbar.active",
@@ -372,7 +375,7 @@
 		//  Background color for the remote indicator on the status bar.
 		"statusBarItem.remoteBackground": "$i_h.bg",
 		//  Foreground color for the remote indicator on the status bar.
-		"statusBarItem.remoteForeground": "$black",
+		"statusBarItem.remoteForeground": "$white",
 		//  Status bar error items background color. Error items stand out from other status bar entries to indicate error conditions.
 		"statusBarItem.errorBackground": "$error.bg",
 		//  Status bar error items foreground color. Error items stand out from other status bar entries to indicate error conditions.
@@ -386,7 +389,7 @@
 		//  Status bar item border color when focused on keyboard navigation.
 		"statusBarItem.focusBorder": "$teal.650",
 		"statusBarItem.settingsProfilesBackground": "$sky.550",
-		"statusBarItem.settingsProfilesForeground": "$base.1000",
+		"statusBarItem.settingsProfilesForeground": "$base.100",
 		"sash.hoverBorder": "$prime.450",
 		"editorGroup.border": "$base.550",
 		/**
@@ -486,12 +489,47 @@
 		// "tab.inactiveModifiedBorder": "#ff0000"
 		"tab.unfocusedActiveForeground": "$base.400",
 		"tab.unfocusedInactiveForeground": "$base.550",
-		// hover Widget
-		"editor.hoverHighlightBackground": "$base.750",
-		"editorHoverWidget.statusBarBackground": "mix->$base.950&$base.1000",
-		"editorHoverWidget.background": "1/10-dim->$base.1000",
-		"editorHoverWidget.foreground": "$base.200",
-		"editorHoverWidget.border": "$base.750",
-		"editorHoverWidget.highlightForeground": "$white"
+		/**
+		 * Editor Widget Colors
+		 */
+		"widget.shadow": "$base.550/20",
+		"widget.border": "$base.550",
+		"editorWidget.foreground": "$base.250", // Foreground color of editor widgets, such as find/replace.
+		"editorWidget.background": "1/5-mix->$base.950&$base.900", // Background color of editor widgets, such as Find/Replace.
+		"editorWidget.border": "$amber.550", // Border color of the editor widget unless the widget does not contain a border or defines its own border color.
+		// "editorWidget.resizeBorder": "", // Border color of the resize bar of editor widgets. The color is only used if the widget chooses to have a resize border and if the color is not overridden by a widget.
+		"editorSuggestWidget.background": "$base.750", // Background color of the suggestion widget.
+		"editorSuggestWidget.border": "$base.550", // Border color of the suggestion widget.
+		"editorSuggestWidget.foreground": "$base.450", // Foreground color of the suggestion widget.
+		"editorSuggestWidget.focusHighlightForeground": "1/8-glow->$hipe.500", // Color of the match highlights in the suggest widget when an item is focused.
+		"editorSuggestWidget.highlightForeground": "$hipe.450", // Color of the match highlights in the suggestion widget.
+		"editorSuggestWidget.selectedBackground": "$base.650", // Background color of the selected entry in the suggestion widget.
+		"editorSuggestWidget.selectedForeground": "$base.300", // Foreground color of the selected entry in the suggest widget.
+		"editorSuggestWidget.selectedIconForeground": "$base.200", // Icon foreground color of the selected entry in the suggest widget.
+		"editorSuggestWidgetStatus.foreground": "$white", // Foreground color of the suggest widget status.
+		"editorHoverWidget.foreground": "$base.200", // Foreground color of the editor hover.
+		"editorHoverWidget.background": "1/10-dim->$base.950", // Background color of the editor hover.
+		"editorHoverWidget.border": "$base.750", // Border color of the editor hover.
+		"editor.hoverHighlightBackground": "$base.750", // Foreground color of the active item in the parameter hint.
+		"editorHoverWidget.highlightForeground": "$white",
+		"editorHoverWidget.statusBarBackground": "mix->$base.950&$base.1000", // Background color of the editor hover status bar.
+		// inline suggestions highlight
+		"editorGhostText.border": "$base.450/40",
+		"editorGhostText.background": "$transparent",
+		"editorGhostText.foreground": "$base.550",
+		"editorStickyScroll.background": "$base.650", // Editor sticky scroll background color
+		"editorStickyScrollHover.background": "$base.600" // Editor sticky scroll on hover background color
+		// The Debug Exception widget is a peek view that shows in the editor when debug stops at an exception.
+		// debugExceptionWidget.background: Exception widget background color.
+		// debugExceptionWidget.border: Exception widget border color.
+		// The editor marker view shows when navigating to errors and warnings in the editor (Go to Next Error or Warning command).
+
+		// editorMarkerNavigation.background: Editor marker navigation widget background.
+		// editorMarkerNavigationError.background: Editor marker navigation widget error color.
+		// editorMarkerNavigationWarning.background: Editor marker navigation widget warning color.
+		// editorMarkerNavigationInfo.background: Editor marker navigation widget info color.
+		// editorMarkerNavigationError.headerBackground: Editor marker navigation widget error heading background.
+		// editorMarkerNavigationWarning.headerBackground: Editor marker navigation widget warning heading background.
+		// editorMarkerNavigationInfo.headerBackground: Editor marker navigation widget info heading background.
 	}
 }
